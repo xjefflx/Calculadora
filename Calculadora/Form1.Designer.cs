@@ -28,6 +28,7 @@
             this.btnMultiplicar = new System.Windows.Forms.Button();
             this.btnDividir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnModulo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNum1
@@ -35,16 +36,9 @@
             this.lblNum1.AutoSize = true;
             this.lblNum1.Location = new System.Drawing.Point(30, 30);
             this.lblNum1.Name = "lblNum1";
-            this.lblNum1.Size = new System.Drawing.Size(79, 13);
+            this.lblNum1.Size = new System.Drawing.Size(77, 13);
             this.lblNum1.TabIndex = 0;
             this.lblNum1.Text = "Primer número:";
-            // 
-            // txtNum1
-            // 
-            this.txtNum1.Location = new System.Drawing.Point(120, 27);
-            this.txtNum1.Name = "txtNum1";
-            this.txtNum1.Size = new System.Drawing.Size(150, 20);
-            this.txtNum1.TabIndex = 1;
             // 
             // lblNum2
             // 
@@ -55,12 +49,37 @@
             this.lblNum2.TabIndex = 2;
             this.lblNum2.Text = "Segundo número:";
             // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(30, 230);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(58, 13);
+            this.lblResultado.TabIndex = 8;
+            this.lblResultado.Text = "Resultado:";
+            // 
+            // txtNum1
+            // 
+            this.txtNum1.Location = new System.Drawing.Point(120, 27);
+            this.txtNum1.Name = "txtNum1";
+            this.txtNum1.Size = new System.Drawing.Size(150, 20);
+            this.txtNum1.TabIndex = 1;
+            this.txtNum1.TextChanged += new System.EventHandler(this.txtNum1_TextChanged);
+            // 
             // txtNum2
             // 
             this.txtNum2.Location = new System.Drawing.Point(120, 67);
             this.txtNum2.Name = "txtNum2";
             this.txtNum2.Size = new System.Drawing.Size(150, 20);
             this.txtNum2.TabIndex = 3;
+            // 
+            // txtResultado
+            // 
+            this.txtResultado.Location = new System.Drawing.Point(120, 230);
+            this.txtResultado.Name = "txtResultado";
+            this.txtResultado.ReadOnly = true;
+            this.txtResultado.Size = new System.Drawing.Size(150, 20);
+            this.txtResultado.TabIndex = 9;
             // 
             // btnSuma
             // 
@@ -106,26 +125,9 @@
             this.btnDividir.UseVisualStyleBackColor = true;
             this.btnDividir.Click += new System.EventHandler(this.btnDividir_Click);
             // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(30, 183);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(58, 13);
-            this.lblResultado.TabIndex = 8;
-            this.lblResultado.Text = "Resultado:";
-            // 
-            // txtResultado
-            // 
-            this.txtResultado.Location = new System.Drawing.Point(120, 180);
-            this.txtResultado.Name = "txtResultado";
-            this.txtResultado.ReadOnly = true;
-            this.txtResultado.Size = new System.Drawing.Size(150, 20);
-            this.txtResultado.TabIndex = 9;
-            // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(33, 215);
+            this.btnLimpiar.Location = new System.Drawing.Point(33, 274);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(237, 30);
             this.btnLimpiar.TabIndex = 10;
@@ -133,11 +135,23 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // btnModulo
+            // 
+            this.btnModulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModulo.Location = new System.Drawing.Point(33, 161);
+            this.btnModulo.Name = "btnModulo";
+            this.btnModulo.Size = new System.Drawing.Size(50, 40);
+            this.btnModulo.TabIndex = 11;
+            this.btnModulo.Text = "%";
+            this.btnModulo.UseVisualStyleBackColor = true;
+            this.btnModulo.Click += new System.EventHandler(this.btnModulo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 261);
+            this.ClientSize = new System.Drawing.Size(304, 316);
+            this.Controls.Add(this.btnModulo);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtResultado);
             this.Controls.Add(this.lblResultado);
@@ -156,6 +170,7 @@
             this.Text = "Calculadora Básica";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -171,5 +186,6 @@
         private System.Windows.Forms.Button btnMultiplicar;
         private System.Windows.Forms.Button btnDividir;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnModulo;
     }
 }

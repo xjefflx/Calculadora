@@ -29,6 +29,22 @@ namespace Calculadora
                 txtResultado.Text = (n1 + n2).ToString();
         }
 
+       private void btnModulo_Click(object sender, EventArgs e)
+        {
+            if (ObtenerValores(out double n1, out double n2))
+            {
+                if (n2 == 0)
+                {
+                    MessageBox.Show("No se puede calcular el módulo entre cero.", "Error matemático", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtResultado.Text = "Error";
+                }
+                else
+                {
+                    // Calcula el residuo de la división y lo muestra en el cuadro de texto
+                    txtResultado.Text = (n1 % n2).ToString();
+                }
+            }
+        }
         private void btnResta_Click(object sender, EventArgs e)
         {
             if (ObtenerValores(out double n1, out double n2))
@@ -64,5 +80,12 @@ namespace Calculadora
             txtResultado.Clear();
             txtNum1.Focus();
         }
+
+    private void txtNum1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
